@@ -9,6 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        whatsapp: "appointment-button bg-primary text-primary-foreground hover:bg-primary/90",
+        inverse: "appointment-button bg-background text-primary hover:bg-secondary",
         default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
