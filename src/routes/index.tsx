@@ -21,6 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Nutricionista em Brasília | Edineide Araújo" },
       { property: "og:description", content: "Mais do que dietas, um plano alimentar feito para a sua realidade." },
       { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: hero.url }, { name: "twitter:image", content: hero.url },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Nutritionist", name: "Edineide Araújo - Naturalmente Você", telephone: "+5561981018687", address: { "@type": "PostalAddress", addressLocality: "Brasília", addressRegion: "DF", addressCountry: "BR" }, sameAs: ["https://instagram.com/natural.mentevoce"] }) }],
   }),
