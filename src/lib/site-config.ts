@@ -3,7 +3,7 @@ export const siteConfig = {
   name: "Edineide Araújo",
   crn: "CRN-127932",
   city: "Brasília/DF",
-  whatsapp: "61981018687",
+  whatsapp: "5561981018687",
   instagram: "natural.mentevoce",
   message: "Olá, Edineide! Vi seu site e gostaria de agendar uma consulta.",
   ga4Id: "", // Insira o ID GA4 e carregue o script somente após consentimento.

@@ -77,7 +77,7 @@ function Index() {
   const go = (i: number) => {
     const n = (i + testimonials.length) % testimonials.length;
     setSlide(n);
-    const card = track.current?.children[n] as HTMLElement | undefined;
+    const card = track.current?.firstElementChild?.children[n] as HTMLElement | undefined;
     track.current?.scrollTo({ left: card?.offsetLeft ?? 0, behavior: "smooth" });
   };
   const consent = (v: string) => { localStorage.setItem("naturalmente-cookies", v); setCookies(false); };
