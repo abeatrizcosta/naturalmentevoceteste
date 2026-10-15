@@ -39,19 +39,19 @@ const posts = [
   [p2.url, "Dicas", "Como montar um prato equilibrado", "Metade com legumes e verduras, um quarto com proteína e um quarto com carboidrato. As porções ideais mudam de pessoa para pessoa e devem ser definidas em consulta."],
   [p3.url, "Saúde", "A importância da proteína na sua rotina", "A proteína participa da manutenção dos músculos, da produção de hormônios e da recuperação do corpo. A quantidade adequada deve ser individualizada."],
   [p4.url, "Nutrição", "Alimentos que ajudam na saciedade", "Aveia, frutas com casca, leguminosas, ovos, iogurte natural e legumes costumam deixar a refeição mais duradoura. Comer devagar também ajuda."],
-];
+] as const;
 const testimonials = [
   ["Juliana S.", "Me senti acolhida desde a primeira consulta. Aprendi a me alimentar melhor sem sofrimento.", "Paciente há 6 meses"],
   ["Carla M.", "Atendimento atencioso e muito competente. O plano se encaixou na minha rotina.", "Paciente há 3 meses"],
   ["Fernanda L.", "Método leve e prático, que faz diferença no dia a dia.", "Paciente há 1 ano"],
   ["Renata A.", "Explicações claras e muita paciência. Hoje planejo minhas refeições com mais tranquilidade.", "Paciente há 8 meses"],
   ["Aline T.", "Consultas online muito práticas, com acompanhamento próximo.", "Paciente há 2 meses"],
-];
+] as const;
 const legal = {
   bio: ["Prazer, sou Edineide", "Sou nutricionista e acredito que a alimentação é uma ferramenta poderosa para transformar sua saúde, sua energia e sua qualidade de vida. Meu atendimento é acolhedor, individualizado e pensado para a sua rotina."],
   priv: ["Política de Privacidade", "Nome, telefone e mensagem são usados apenas para responder ao seu contato pelo WhatsApp e não ficam armazenados neste site. Você pode pedir acesso, correção ou exclusão dos seus dados conforme a LGPD. Cookies de medição só são ativados se você aceitar."],
   terms: ["Termos de uso", "O conteúdo deste site tem caráter educativo e não substitui consulta individual com nutricionista. Planos alimentares são elaborados somente após avaliação."],
-};
+} as const;
 
 function WhatsButton({ children = "Agendar pelo WhatsApp", inverse = false, className = "" }: { children?: ReactNode; inverse?: boolean; className?: string }) {
   return <Button asChild variant={inverse ? "inverse" : "whatsapp"} className={className}><a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" onClick={trackWhatsapp}><MessageCircle />{children}</a></Button>;
