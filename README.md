@@ -1,26 +1,20 @@
-# Naturalmente
+# Naturalmente Você
 
-Implement exactly the screenshot and nothing else
+Landing page da nutricionista Edineide Araújo.
 
-This project was built with [Lovable](https://lovable.dev).
+## Desenvolvimento
 
-**Live app**: https://naturalmentevoceteste.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/de8fec7b-2c55-4c1c-8223-171bdcdf2a05).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requer Node.js e npm:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
+
+## Build
+
+```sh
+npm run build
+```
+
+O projeto pode ser publicado na Vercel usando o comando `npm run build`.
