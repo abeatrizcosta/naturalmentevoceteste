@@ -4,12 +4,12 @@ import { Apple, ChevronDown, ChevronLeft, ChevronRight, Dumbbell, Flower2, Heart
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { siteConfig, trackWhatsapp, whatsappUrl } from "@/lib/site-config";
-import hero from "@/assets/upload-hero.jpeg.asset.json";
-import about from "@/assets/upload-about.jpeg.asset.json";
-import p1 from "@/assets/upload-p1.jpeg.asset.json";
-import p2 from "@/assets/upload-p2.jpeg.asset.json";
-import p3 from "@/assets/upload-p3.jpeg.asset.json";
-import p4 from "@/assets/upload-p4.jpeg.asset.json";
+import hero from "@/assets/upload-hero.jpeg";
+import about from "@/assets/upload-about.jpeg";
+import p1 from "@/assets/upload-p1.jpeg";
+import p2 from "@/assets/upload-p2.jpeg";
+import p3 from "@/assets/upload-p3.jpeg";
+import p4 from "@/assets/upload-p4.jpeg";
 
 const title = "Nutricionista em Brasília | Edineide Araújo – CRN-127932";
 const description = "Nutrição estratégica com plano alimentar feito para o seu estilo de vida. Atendimento presencial em Brasília/DF e online.";
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Nutricionista em Brasília | Edineide Araújo" },
       { property: "og:description", content: "Mais do que dietas, um plano alimentar feito para a sua realidade." },
       { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:image", content: hero.url }, { name: "twitter:image", content: hero.url },
+      { property: "og:image", content: hero }, { name: "twitter:image", content: hero },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Nutritionist", name: "Edineide Araújo - Naturalmente Você", telephone: "+5561981018687", address: { "@type": "PostalAddress", addressLocality: "Brasília", addressRegion: "DF", addressCountry: "BR" }, sameAs: ["https://instagram.com/natural.mentevoce"] }) }],
   }),
@@ -36,10 +36,10 @@ const services = [
   [Flower2, "Saúde da mulher", "Cuidados nutricionais em todas as fases da vida.", "Acompanhamento nutricional considerando ciclo menstrual, gestação, pós-parto e menopausa, sempre de forma individual."],
 ] as const;
 const posts = [
-  [p1.url, "Receitas", "Salada colorida com proteína e fibras", "Monte uma base de folhas variadas, acrescente uma fonte de proteína e legumes de cores diferentes. Finalize com uma gordura boa, como azeite ou sementes."],
-  [p2.url, "Dicas", "Como montar um prato equilibrado", "Metade com legumes e verduras, um quarto com proteína e um quarto com carboidrato. As porções ideais mudam de pessoa para pessoa e devem ser definidas em consulta."],
-  [p3.url, "Saúde", "A importância da proteína na sua rotina", "A proteína participa da manutenção dos músculos, da produção de hormônios e da recuperação do corpo. A quantidade adequada deve ser individualizada."],
-  [p4.url, "Nutrição", "Alimentos que ajudam na saciedade", "Aveia, frutas com casca, leguminosas, ovos, iogurte natural e legumes costumam deixar a refeição mais duradoura. Comer devagar também ajuda."],
+  [p1, "Receitas", "Salada colorida com proteína e fibras", "Monte uma base de folhas variadas, acrescente uma fonte de proteína e legumes de cores diferentes. Finalize com uma gordura boa, como azeite ou sementes."],
+  [p2, "Dicas", "Como montar um prato equilibrado", "Metade com legumes e verduras, um quarto com proteína e um quarto com carboidrato. As porções ideais mudam de pessoa para pessoa e devem ser definidas em consulta."],
+  [p3, "Saúde", "A importância da proteína na sua rotina", "A proteína participa da manutenção dos músculos, da produção de hormônios e da recuperação do corpo. A quantidade adequada deve ser individualizada."],
+  [p4, "Nutrição", "Alimentos que ajudam na saciedade", "Aveia, frutas com casca, leguminosas, ovos, iogurte natural e legumes costumam deixar a refeição mais duradoura. Comer devagar também ajuda."],
 ] as const;
 const testimonials = [
   ["Juliana S.", "Me senti acolhida desde a primeira consulta. Aprendi a me alimentar melhor sem sofrimento.", "Paciente há 6 meses"],
@@ -100,10 +100,10 @@ function Index() {
     <main>
       <section id="inicio" className="hero"><Leaf className="leaf-decoration hero-leaves" /><div className="site-container hero-grid">
         <div className="hero-copy"><span className="eyebrow">SAÚDE • EQUILÍBRIO • BEM-ESTAR</span><h1>Nutrição estratégica para transformar <span className="script">sua saúde</span></h1><p className="hero-description">Mais do que dietas, um plano alimentar feito para o seu estilo de vida, seus objetivos e a sua realidade.</p><div className="hero-actions"><WhatsButton /><a className="text-link" href="#sobre">Como funciona a consulta <ChevronDown size={16} /></a></div></div>
-        <div className="portrait-wrap"><img className="hero-portrait" src={hero.url} alt="Edineide Araújo, nutricionista, de jaleco branco" width="700" height="800" /><div className="portrait-label"><Leaf /><div><strong>Edineide Araújo</strong><small>Nutricionista {siteConfig.crn}</small></div></div></div>
+        <div className="portrait-wrap"><img className="hero-portrait" src={hero} alt="Edineide Araújo, nutricionista, de jaleco branco" width="700" height="800" /><div className="portrait-label"><Leaf /><div><strong>Edineide Araújo</strong><small>Nutricionista {siteConfig.crn}</small></div></div></div>
       </div></section>
       <section className="benefits" aria-label="Diferenciais"><div className="site-container benefits-grid">{[[Leaf, "Atendimento personalizado", "Respeito ao seu ritmo e às suas necessidades."], [Target, "Foco em hábitos sustentáveis", "Mais saúde, energia e qualidade de vida."], [Heart, "Acompanhamento contínuo", "Você não está sozinha nessa jornada."], [Laptop, "Presencial e online", "Mais praticidade e flexibilidade para você."]].map(([Icon, h, p]) => { const I = Icon as typeof Leaf; return <div className="benefit" key={h as string}><I /><div><h3>{h as string}</h3><p>{p as string}</p></div></div>; })}</div></section>
-      <section id="sobre" className="section"><div className="site-container about-grid"><div className="about-image-wrap"><img className="about-photo" src={about.url} alt="Retrato de Edineide Araújo" loading="lazy" /></div><div className="about-text"><span className="eyebrow">SOBRE MIM</span><h2>Prazer, sou <span className="script">Edineide</span></h2><p>Sou nutricionista e acredito que a alimentação é uma ferramenta poderosa para transformar sua saúde, sua energia e sua qualidade de vida.</p><Button variant="link" className="inline-action" onClick={() => show("bio")}>Saiba mais sobre mim →</Button></div></div></section>
+      <section id="sobre" className="section"><div className="site-container about-grid"><div className="about-image-wrap"><img className="about-photo" src={about} alt="Retrato de Edineide Araújo" loading="lazy" /></div><div className="about-text"><span className="eyebrow">SOBRE MIM</span><h2>Prazer, sou <span className="script">Edineide</span></h2><p>Sou nutricionista e acredito que a alimentação é uma ferramenta poderosa para transformar sua saúde, sua energia e sua qualidade de vida.</p><Button variant="link" className="inline-action" onClick={() => show("bio")}>Saiba mais sobre mim →</Button></div></div></section>
       <section id="servicos" className="section services"><div className="site-container"><div className="section-heading"><span className="eyebrow">COMO POSSO AJUDAR VOCÊ?</span><h2>Meu foco é o seu bem-estar</h2></div><div className="service-grid">{services.map(([Icon, h, p, more]) => <article className="service-card" key={h}><Icon className="service-icon" /><h3>{h}</h3><p>{p}</p><Button variant="link" className="inline-action" onClick={() => setDialog({ title: h, body: more, cta: true })}>Saiba mais</Button></article>)}</div></div></section>
       <section id="conteudos" className="section"><div className="site-container"><div className="section-heading"><span className="eyebrow">CONTEÚDOS</span><h2>Dicas, receitas e muito mais</h2><p>Receitas saudáveis, orientações nutricionais e conteúdos para inspirar o seu dia a dia.</p></div><div className="article-grid">{posts.map(([img, cat, h, body]) => <article className="article-card" key={h}><img src={img} alt={h} loading="lazy" /><div className="article-text"><span className="article-category">{cat}</span><h3>{h}</h3><Button variant="link" className="inline-action" onClick={() => setDialog({ title: h, body: `${body} Conteúdo educativo; não substitui avaliação individual.`, img, cta: true })}>Ler mais →</Button></div></article>)}</div><div className="instagram-band"><Instagram size={20} />Acompanhe no Instagram <a href={`https://instagram.com/${siteConfig.instagram}`} target="_blank" rel="noopener noreferrer">@{siteConfig.instagram}</a></div></div></section>
       <section id="depoimentos" className="section testimonials"><div className="site-container"><div className="section-heading"><span className="eyebrow">DEPOIMENTOS</span><h2>O que dizem sobre o atendimento</h2></div><div className="testimonial-viewport" ref={track} tabIndex={0} aria-label="Depoimentos" onKeyDown={(e) => { if (e.key === "ArrowRight") go(slide + 1); if (e.key === "ArrowLeft") go(slide - 1); }}><div className="testimonial-track">{testimonials.map(([n, q, t]) => <figure className="testimonial-card" key={n}><div className="stars" aria-label="5 de 5 estrelas">{Array.from({ length: 5 }, (_, i) => <Star key={i} />)}</div><blockquote>“{q}”</blockquote><figcaption className="patient"><span className="patient-avatar">{n[0]}</span><span><strong>{n}</strong><small>{t}</small></span></figcaption></figure>)}</div></div><div className="carousel-controls"><Button variant="ghost" className="carousel-arrow" aria-label="Depoimento anterior" onClick={() => go(slide - 1)}><ChevronLeft /></Button><div className="carousel-dots">{testimonials.map((_, i) => <Button variant="ghost" key={i} aria-label={`Ir ao depoimento ${i + 1}`} className={`carousel-dot ${slide === i ? "selected" : ""}`} onClick={() => go(i)} />)}</div><Button variant="ghost" className="carousel-arrow" aria-label="Próximo depoimento" onClick={() => go(slide + 1)}><ChevronRight /></Button></div><p className="example-note">Depoimentos ilustrativos, sem promessa de resultados.</p></div></section>
